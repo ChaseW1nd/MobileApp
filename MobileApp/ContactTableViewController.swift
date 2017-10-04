@@ -10,9 +10,16 @@ import UIKit
 
 class ContactTableViewController: UITableViewController {
 
+    // MARK: Properties
+    
+    var contacts = [Contact]()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Load the sample data.
+        loadSampleContacts()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -26,26 +33,37 @@ class ContactTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return contacts.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "ContactTableViewCell"
+        
         // Configure the cell...
-
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ContactTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let contact = contacts[indexPath.row]
+        
+        cell.nameLabel.text = contact.name
+        cell.usernameLabel.text = contact.username
+        cell.phoneLabel.text = contact.phone
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -84,12 +102,33 @@ class ContactTableViewController: UITableViewController {
 
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
+//    }
+ 
     */
+    
+    // MARK: Private Methods
+    
+    private func loadSampleContacts(){
+        
+        guard let contact1 = Contact(name: "Jane", username: "jane111", phone: "0450123456") else {
+            fatalError("Unable to instantiate contact1")
+        }
+        
+        guard let contact2 = Contact(name: "John", username: "john", phone: "0450111111") else {
+            fatalError("Unable to instantiate contact2")
+        }
+        
+        guard let contact3 = Contact(name: "Jerry", username: "jjj", phone: "0450222222") else {
+            fatalError("Unable to instantiate contact3")
+        }
+        
+        contacts += [contact1, contact2, contact3]
+        
+    }
 
 }

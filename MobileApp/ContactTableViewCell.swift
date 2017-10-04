@@ -10,6 +10,11 @@ import UIKit
 
 class ContactTableViewCell: UITableViewCell {
 
+    // MARK: Properties
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
