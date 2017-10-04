@@ -228,6 +228,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Contacts" id="eAU-mX-cOU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9EO-sK-zbw">
+                            <connections>
+                                <action selector="cancel:" destination="Daa-xB-nE8" id="toe-Vu-5Vq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JlS-jx-qiG">
                             <connections>
                                 <segue destination="tas-OH-qtD" kind="show" id="bSr-Eq-TUK"/>
@@ -291,7 +296,7 @@
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <state key="normal" title="Get Location"/>
                                         <connections>
-                                            <segue destination="Cc1-Fd-3V5" kind="show" id="QwD-WC-83K"/>
+                                            <action selector="getLocation:" destination="Dq9-ns-pMx" eventType="touchUpInside" id="odl-TE-Upe"/>
                                         </connections>
                                     </button>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gA-yD-mnq">
@@ -316,8 +321,11 @@
                                         <rect key="frame" x="0.0" y="167.5" width="263.5" height="41"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <state key="normal" title="Choose A Contact"/>
+                                        <connections>
+                                            <action selector="chooseContact:" destination="Dq9-ns-pMx" eventType="touchUpInside" id="Hha-4q-GiL"/>
+                                        </connections>
                                     </button>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gga-Jf-Mg3">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gga-Jf-Mg3">
                                         <rect key="frame" x="0.0" y="218.5" width="263.5" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
@@ -344,6 +352,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Journey" image="icons8-Running-50" id="cuA-F2-Rei"/>
+                    <connections>
+                        <outlet property="contactLabel" destination="Gga-Jf-Mg3" id="dUD-eh-nKT"/>
+                        <outlet property="currentLocationField" destination="8gA-yD-mnq" id="sfK-rI-lNK"/>
+                        <outlet property="destinationField" destination="kku-s1-nEu" id="yWy-19-bWA"/>
+                        <outlet property="toLabel" destination="3AC-5T-nKY" id="CJF-Mv-7hy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSC-sV-zXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

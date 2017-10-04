@@ -10,6 +10,13 @@ import UIKit
 
 class JourneyViewController: UIViewController {
 
+    // MARK: Properties
+    
+    @IBOutlet weak var currentLocationField: UITextField!
+    @IBOutlet weak var toLabel: UILabel!
+    @IBOutlet weak var destinationField: UITextField!
+    @IBOutlet weak var contactLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,5 +38,23 @@ class JourneyViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: Actions
+    
+    @IBAction func getLocation(_ sender: UIButton){
+        
+        currentLocationField.isHidden = false
+        toLabel.isHidden = false
+        destinationField.isHidden = false
+        
+    }
+    
+    @IBAction func chooseContact(_ sender: UIButton) {
+        contactLabel.isHidden = false
+
+    }
+    
+
+    
 
 }

@@ -100,8 +100,13 @@ class ContactTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
+     
+     @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+     }
+     
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -109,7 +114,7 @@ class ContactTableViewController: UITableViewController {
 //        // Pass the selected object to the new view controller.
 //    }
  
-    */
+    
     
     // MARK: Private Methods
     
