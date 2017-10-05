@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterViewController: UIViewController {
 
+    // TODO: URL for server
+    
+    let URL_USER_REGISTER = ""
+    
+    // MARK: Properties
+    
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var phoneField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +44,86 @@ class RegisterViewController: UIViewController {
     }
     */
 
+    // MARK: Actions
+    @IBAction func signUpButton(_ sender: UIButton) {
+        
+//        let username = usernameField.text
+//        let password = passwordField.text
+//        let name = nameField.text
+//        let phone = phoneField.text
+        
+        if isValidPhone(value: phoneField.text!) {
+            
+            print("All good", phoneField.text ?? "null")
+            
+            let parameters: [String: String] = [
+                "type": "register",
+                "username": usernameField.text!,
+                "password": passwordField.text!,
+                "name": nameField.text!,
+                "phone": phoneField.text!
+            ]
+            
+            // Sending http post request
+            Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON {
+                
+                response in
+                    
+                // Print response
+                print(response)
+                    
+                // Get the json value from the server
+                if let result = response.result.value {
+                        
+                    // Convert it as NSDictionary
+                    let jsonData = result as! NSDictionary
+                    
+                    // Way to access: jsonData.value(forKey: "message") as! String?
+                    }
+            }
+            
+        
+        }else{
+            
+            phoneField.text = ""
+            phoneField.becomeFirstResponder()
+            let alert = UIAlertController(title: "Oops",
+                                          message: "Invalid phone number!",
+                                          preferredStyle: .alert)
+            let action = UIAlertAction(title: "Re-enter",
+                                       style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        
+        }
+        
+
+        
+        
+        
+        
+        
+        
+    }
+    
+    // Validate phone number
+    func isValidPhone(value: String) -> Bool {
+        
+        if value.characters.count != 10 {
+            print(value)
+            return false
+            
+        }else{
+            let PHONE_REGEX = "^0\\d{9}$"
+            let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+            return phoneTest.evaluate(with: value)
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
 }

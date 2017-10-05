@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -41,10 +40,9 @@ class LoginViewController: UIViewController {
     
     // MARK: Actions
     
-    @IBAction func login(_ Sender: UIButton){
+    
+    // TODO: Login authentication.
         
-        // TODO: Login authentication.
-        
-    }
+    
 
 }
