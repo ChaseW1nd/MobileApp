@@ -1,5 +1,6 @@
 # MobileApp
 
+Name needs to be changed.
 This is the mobile app part for assignment 2 of COMP90018 Mobile Computing Systems Programming.
 
 ## Getting Started
@@ -16,18 +17,16 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Since Pods/ folder is included, there's no need to do
 
 ```
-Give the example
+pod install
 ```
 
-And repeat
+You only need to
 
 ```
-until finished
+I'm not quite sure now
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -38,7 +37,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* 
+* [Alamofire](https://github.com/Alamofire/Alamofire) - Used to handle networking
 
 ## Authors
 
@@ -49,9 +48,3 @@ Add additional notes about how to deploy this on a live system
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
