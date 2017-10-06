@@ -54,7 +54,8 @@ class RegisterViewController: UIViewController {
         
         if isValidPhone(value: phoneField.text!) {
             
-            print("All good", phoneField.text ?? "null")
+            // Phone number is valid.
+            debugPrint("All good", phoneField.text ?? "null")
             
             let parameters: [String: String] = [
                 "type": "register",
@@ -64,27 +65,36 @@ class RegisterViewController: UIViewController {
                 "phone": phoneField.text!
             ]
             
-            // Sending http post request
-            Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON {
-                
-                response in
+            // Sending http post request.
+            Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+                // TODO: statusCode should align with the server implementation.
+                .validate(statusCode: 200..<300)
+                .responseJSON {
+                    response in
+                    switch response.result {
                     
-                // Print response
-                print(response)
+                    // TODO: Test connecting.
+                    case .success:
+                        // Print response.
+                        debugPrint(response)
                     
-                // Get the json value from the server
-                if let result = response.result.value {
+                        // Convert it as NSDictionary.
+                        let jsonData = response.result.value as! NSDictionary
                         
-                    // Convert it as NSDictionary
-                    let jsonData = result as! NSDictionary
+                        // Way to access: jsonData.value(forKey: "message") as! String?
+                        // jsonData.value(forKey: "sessionID") as! String?
+                        
+                    case .failure(let error):
+                        debugPrint(error)
+                }
                     
-                    // Way to access: jsonData.value(forKey: "message") as! String?
-                    }
             }
+            
             
         
         }else{
             
+            // Phone number is invalid.
             phoneField.text = ""
             phoneField.becomeFirstResponder()
             let alert = UIAlertController(title: "Oops",
@@ -97,16 +107,9 @@ class RegisterViewController: UIViewController {
         
         }
         
-
-        
-        
-        
-        
-        
-        
     }
     
-    // Validate phone number
+    // Validate phone number.
     func isValidPhone(value: String) -> Bool {
         
         if value.characters.count != 10 {
