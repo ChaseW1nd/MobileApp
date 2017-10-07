@@ -21,8 +21,8 @@ class JourneyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set initial countdown duration as 10 mins (600 s)
-        datePicker.countDownDuration = 600
+        // Set initial countdown duration as 20 mins (1200 s)
+        datePicker.countDownDuration = 1200
     }
 
     override func didReceiveMemoryWarning() {
