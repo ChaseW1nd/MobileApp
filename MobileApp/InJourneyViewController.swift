@@ -18,6 +18,7 @@ class InJourneyViewController: UIViewController {
     var time: Int!
     var totalSecs: Int!
     var timer: Timer!
+    var contactPhone = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,9 @@ class InJourneyViewController: UIViewController {
         
         // Use Timer to update remaining time and labels
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickDown), userInfo: nil, repeats: true)
+        
+        // FIXME: Print for testing
+        print(contactPhone)
         
     }
 
@@ -49,9 +53,9 @@ class InJourneyViewController: UIViewController {
 
     // MARK: Actions
     
+    // Add some minutes choosing from a list.
     @IBAction func addMoreMins(_ sender: UIButton) {
         
-        // Add some minutes choosing from a list.
         let alert = UIAlertController(title: "How long do you wanna add?", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "2 mins", style: .default, handler: { (action) in
@@ -62,11 +66,13 @@ class InJourneyViewController: UIViewController {
             self.totalSecs = self.totalSecs + 600 }))
         alert.addAction(UIAlertAction(title: "30 mins", style: .default, handler: { (action) in
             self.totalSecs = self.totalSecs + 1800 }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
     }
     
     
+    // Calculate the remaining time.
     func tickDown() {
         
         totalSecs = totalSecs - 1
@@ -74,8 +80,18 @@ class InJourneyViewController: UIViewController {
                          valueMin: (totalSecs % 3600) / 60,
                          valueSec: totalSecs % 60 )
         
+        // Check if timeout.
+        if totalSecs == 0 {
+            
+            // Send notification.
+            
+            
+        }
+        
+        
     }
     
+    // Update labels.
     func updateTimeLabels(valueHour: Int, valueMin: Int, valueSec: Int){
         
         hourLabel.text = String(valueHour)

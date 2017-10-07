@@ -13,7 +13,10 @@ class ContactTableViewController: UITableViewController {
     // MARK: Properties
     
     var contacts = [Contact]()
-        
+    var name = ""
+    var phone = ""
+    var username = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,12 +38,12 @@ class ContactTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        // Return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        // Return the number of rows
         return contacts.count
     }
     
@@ -50,7 +53,6 @@ class ContactTableViewController: UITableViewController {
         let cellIdentifier = "ContactTableViewCell"
         
         // Configure the cell...
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ContactTableViewCell  else {
             fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
         }
@@ -65,6 +67,21 @@ class ContactTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Get selected cell.
+        let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: indexPath!) as! ContactTableViewCell
+        
+        // Get selected cell info.
+        name = currentCell.nameLabel.text!
+        username = currentCell.usernameLabel.text!
+        phone = currentCell.phoneLabel.text!
+        
+        // Nav to journey view controller
+        self.performSegue(withIdentifier: "selectContact", sender: self)
+    
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -109,13 +126,18 @@ class ContactTableViewController: UITableViewController {
      
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Pass contact to injourney view controller
+        if segue.identifier == "selectContact" {
+            let nextController = segue.destination as! JourneyViewController
+            nextController.name = name
+            nextController.username = username
+            nextController.phone = phone
+        }
+    }
  
-    
-    
+
     // MARK: Private Methods
     
     private func loadSampleContacts(){

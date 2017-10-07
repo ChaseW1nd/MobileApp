@@ -18,11 +18,25 @@ class JourneyViewController: UIViewController {
     @IBOutlet weak var contactLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    // Contact information.
+    var name = ""
+    var username = ""
+    var phone = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Set initial countdown duration as 20 mins (1200 s)
         datePicker.countDownDuration = 1200
+        
+        // Hide contact label when no contact is choosen
+        if username != nil {
+            contactLabel.isHidden = false
+            contactLabel.text = name
+        }else{
+            contactLabel.isHidden = true
+        }
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,11 +56,11 @@ class JourneyViewController: UIViewController {
             let nextController = segue.destination as! InJourneyViewController
             // Pass the number of minutes
             nextController.time = Int(datePicker.countDownDuration) / 60
+            // Pass the contact number
+            nextController.contactPhone = phone
         }
         
-        // TODO: Pass the selected emergency contact to next controller
     }
-    
     
     // MARK: Actions
     
@@ -59,14 +73,8 @@ class JourneyViewController: UIViewController {
     }
     
     @IBAction func chooseContact(_ sender: UIButton) {
-        contactLabel.isHidden = false
+        //contactLabel.isHidden = false
 
     }
-    
-
-    
-    
-
-    
 
 }
