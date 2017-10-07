@@ -130,10 +130,14 @@ class ContactTableViewController: UITableViewController {
         
         // Pass contact to injourney view controller
         if segue.identifier == "selectContact" {
-            let nextController = segue.destination as! JourneyViewController
+            //let nextController = segue.destination as! JourneyViewController
+            let nextController = segue.destination as! MainViewController
+            
             nextController.name = name
             nextController.username = username
             nextController.phone = phone
+            
+            nextController.selectedIndex = 0
         }
     }
  

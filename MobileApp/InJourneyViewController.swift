@@ -22,7 +22,7 @@ class InJourneyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Initialize the countdown and labels
         totalSecs = time * 60
         updateTimeLabels(valueHour: time / 60, valueMin: time % 60, valueSec: 0)
@@ -41,15 +41,21 @@ class InJourneyViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        // TODO: Remove this test for tab navigation
+        if segue.identifier == "test" {
+            let nextController = segue.destination as! MainViewController
+            nextController.selectedIndex = 0
+            
+        }
+        
     }
-    */
+    
 
     // MARK: Actions
     

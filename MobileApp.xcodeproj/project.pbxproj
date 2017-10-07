@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		88922F6FB5CF8576378FD598 /* Pods_MobileApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C49228E65526874511DA847 /* Pods_MobileApp.framework */; };
 		9B375B691F88C0F30056AC98 /* InJourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B375B681F88C0F30056AC98 /* InJourneyViewController.swift */; };
+		9B375B6C1F893DF90056AC98 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B375B6B1F893DF90056AC98 /* MainViewController.swift */; };
 		9BC301BB1F85112500E744FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC301BA1F85112500E744FB /* AppDelegate.swift */; };
 		9BC301BD1F85112500E744FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC301BC1F85112500E744FB /* ViewController.swift */; };
 		9BC301C01F85112500E744FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC301BE1F85112500E744FB /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		73B82A606E08C6B661BCBDAF /* Pods-MobileApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileApp/Pods-MobileApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7C49228E65526874511DA847 /* Pods_MobileApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B375B681F88C0F30056AC98 /* InJourneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InJourneyViewController.swift; sourceTree = "<group>"; };
+		9B375B6B1F893DF90056AC98 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9BC301B71F85112500E744FB /* MobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC301BA1F85112500E744FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC301BC1F85112500E744FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				9BC301E11F85135900E744FB /* JourneyViewController.swift */,
 				9BC301E31F8514AA00E744FB /* ReceiverViewController.swift */,
 				9B375B681F88C0F30056AC98 /* InJourneyViewController.swift */,
+				9B375B6B1F893DF90056AC98 /* MainViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				9BC301E41F8514AA00E744FB /* ReceiverViewController.swift in Sources */,
 				9BC301BD1F85112500E744FB /* ViewController.swift in Sources */,
 				9BC301E61F8514CB00E744FB /* ContactTableViewController.swift in Sources */,
+				9B375B6C1F893DF90056AC98 /* MainViewController.swift in Sources */,
 				9BC301EA1F8514ED00E744FB /* Contact.swift in Sources */,
 				9BC301E81F8514E200E744FB /* ContactTableViewCell.swift in Sources */,
 				9BC301BB1F85112500E744FB /* AppDelegate.swift in Sources */,

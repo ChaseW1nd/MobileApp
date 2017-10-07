@@ -240,7 +240,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Dq9-ns-pMx" kind="presentation" identifier="selectContact" id="oVQ-gd-thc"/>
+                        <segue destination="t9w-Rq-Ssz" kind="presentation" identifier="selectContact" id="btx-hH-HWl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1H-Io-omg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,7 +410,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="forTesting"/>
                                 <connections>
-                                    <segue destination="Dq9-ns-pMx" kind="show" id="Umy-1v-1hY"/>
+                                    <segue destination="t9w-Rq-Ssz" kind="presentation" identifier="test" id="FJ7-Ty-WTx"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="4el-9s-BNF">
@@ -527,12 +527,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YW7-FG-Lya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="912.5937031484259"/>
+            <point key="canvasLocation" x="2063" y="889"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="59u-32-aZv">
             <objects>
-                <tabBarController id="t9w-Rq-Ssz" sceneMemberID="viewController">
+                <tabBarController id="t9w-Rq-Ssz" customClass="MainViewController" customModule="MobileApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="pIp-xt-sEn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -693,7 +693,7 @@
         <image name="icons8-Satellite Signal-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oVQ-gd-thc"/>
+        <segue reference="btx-hH-HWl"/>
         <segue reference="60q-tQ-DE5"/>
         <segue reference="t3d-ZX-HhU"/>
     </inferredMetricsTieBreakers>

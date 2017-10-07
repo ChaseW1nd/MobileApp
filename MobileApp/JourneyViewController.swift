@@ -20,7 +20,6 @@ class JourneyViewController: UIViewController {
     
     // Contact information.
     var name = ""
-    var username = ""
     var phone = ""
     
     override func viewDidLoad() {
@@ -29,8 +28,13 @@ class JourneyViewController: UIViewController {
         // Set initial countdown duration as 20 mins (1200 s)
         datePicker.countDownDuration = 1200
         
+        // Read data from tab bar controller
+        let mainController = self.tabBarController as! MainViewController
+        name = mainController.name
+        phone = mainController.phone
+        
         // Hide contact label when no contact is choosen
-        if username != nil {
+        if name != "" {
             contactLabel.isHidden = false
             contactLabel.text = name
         }else{
