@@ -67,7 +67,7 @@ class RegisterViewController: UIViewController {
             
             // Sending http post request.
             Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-                // TODO: statusCode should align with the server implementation.
+                // FIXME: statusCode should align with the server implementation.
                 .validate(statusCode: 200..<300)
                 .responseJSON {
                     response in

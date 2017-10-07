@@ -281,7 +281,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JGE-R1-2Me">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="-1" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JGE-R1-2Me">
                                 <rect key="frame" x="27" y="30" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="528819118.66745198">
                                     <!--2017-10-04 14:11:58 +0000-->
@@ -337,6 +337,9 @@
                                         <state key="normal" title="Start">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="cRu-pU-4IF" kind="presentation" identifier="startJourney" id="gtj-dI-eGL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -354,6 +357,7 @@
                     <connections>
                         <outlet property="contactLabel" destination="Gga-Jf-Mg3" id="dUD-eh-nKT"/>
                         <outlet property="currentLocationField" destination="8gA-yD-mnq" id="sfK-rI-lNK"/>
+                        <outlet property="datePicker" destination="JGE-R1-2Me" id="20I-lZ-QqN"/>
                         <outlet property="destinationField" destination="kku-s1-nEu" id="yWy-19-bWA"/>
                         <outlet property="toLabel" destination="3AC-5T-nKY" id="CJF-Mv-7hy"/>
                     </connections>
@@ -381,7 +385,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYt-c3-9b1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648.8000000000002" y="824.43778110944538"/>
+            <point key="canvasLocation" x="2513" y="188"/>
+        </scene>
+        <!--In Journey View Controller-->
+        <scene sceneID="bKJ-XL-z8k">
+            <objects>
+                <viewController id="cRu-pU-4IF" customClass="InJourneyViewController" customModule="MobileApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vfq-UZ-ho8"/>
+                        <viewControllerLayoutGuide type="bottom" id="jMS-aj-WdO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GCg-rD-NKw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWV-Yf-E2v">
+                                <rect key="frame" x="139" y="76" width="80" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHe-dp-adE">
+                                <rect key="frame" x="164" y="529" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Dq9-ns-pMx" kind="show" id="Umy-1v-1hY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="wWV-Yf-E2v" id="1Ew-U1-8yC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YW7-FG-Lya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="969"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="59u-32-aZv">
@@ -538,7 +580,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSA-mH-0nj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="824.43778110944538"/>
+            <point key="canvasLocation" x="1822" y="188"/>
         </scene>
     </scenes>
     <resources>
@@ -548,5 +590,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="t3d-ZX-HhU"/>
+        <segue reference="Umy-1v-1hY"/>
     </inferredMetricsTieBreakers>
 </document>

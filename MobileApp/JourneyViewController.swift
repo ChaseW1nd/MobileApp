@@ -16,11 +16,13 @@ class JourneyViewController: UIViewController {
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var destinationField: UITextField!
     @IBOutlet weak var contactLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Set initial countdown duration as 10 mins (600 s)
+        datePicker.countDownDuration = 600
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,15 +31,22 @@ class JourneyViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        // Pass the selected countdown time to next controller
+        if segue.identifier == "startJourney" {
+            let nextController = segue.destination as! InJourneyViewController
+            // Pass the number of minutes
+            nextController.time = Int(datePicker.countDownDuration) / 60
+        }
+        
+        // TODO: Pass the selected emergency contact to next controller
     }
-    */
+    
     
     // MARK: Actions
     
@@ -53,6 +62,9 @@ class JourneyViewController: UIViewController {
         contactLabel.isHidden = false
 
     }
+    
+
+    
     
 
     
