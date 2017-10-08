@@ -71,6 +71,11 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate {
             let nextController = segue.destination as! MainViewController
             nextController.selectedIndex = 0
             
+        }else if segue.identifier == "arrive" {
+            
+            let nextController = segue.destination as! MainViewController
+            nextController.selectedIndex = 0
+            let destination = Bundle.main.bundleIdentifier!
         }
         
     }
