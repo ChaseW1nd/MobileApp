@@ -1,6 +1,8 @@
 # Safe2Home
 
-This is the mobile app part for assignment 2 of COMP90018 Mobile Computing Systems Programming.
+This is the mobile app part for assignment 2 of COMP90018 Mobile Computing Systems Programming. 
+    
+Travelling alone happens a lot. Especially for single young people, sometimes we have no choice but to go back home alone after a long overtime work. We may choose to take a taxi, catch a bus or walk, but either way we appreciate some extra protection. If we sense any unsecurity, how can we understand the current situation accurately? What should we do as a response? **Safe2Home**  
 
 ## Getting Started
 
@@ -10,11 +12,14 @@ Since we slightly changed the contents of pod "EZAudio", please use the given po
      
 The testing username is "q" with password "q". Please double click the login button if the navigation is not working, we apologize for the inconvenience.
 
-### Features
+### Major Features
 
-#### 
-####
-
+#### Choose an emergency contact to share your real-time location or get your call immediately
+#### Visualize the accurate location using Goole Map
+#### Get a timer to let you track the journey time
+#### Record audio if feel unsafe
+#### Add more time to the timer if delayed
+#### Get your own contact list
 
 ## Built With
 
