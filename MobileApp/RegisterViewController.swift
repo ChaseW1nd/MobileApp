@@ -11,7 +11,7 @@ import Alamofire
 
 class RegisterViewController: UIViewController {
 
-    // TODO: URL for server
+    // URL for server
     let URL_USER_REGISTER = "http://10.13.2.137:8181/register"
     
     // MARK: Properties
@@ -51,9 +51,7 @@ class RegisterViewController: UIViewController {
 //        let name = nameField.text
 //        let phone = phoneField.text
         
-        //if isValidPhone(value: phoneField.text!) {
-        // FIXME: For testing
-        if true {
+        if isValidPhone(value: phoneField.text!) {
             // Phone number is valid.
             debugPrint("All good", phoneField.text ?? "null")
             

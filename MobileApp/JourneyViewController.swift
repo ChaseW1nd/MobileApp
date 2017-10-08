@@ -33,22 +33,16 @@ class JourneyViewController: UIViewController {
         phone = mainController.phone
         target = mainController.targetLocation
         
-        // Hide contact label when no contact is choosen
         if name != "" {
-            contactLabel.isHidden = false
-            contactLabel.text = name
-        } else {
-            contactLabel.isHidden = true
-        }
-        
-        // Hide location labels when no location is choosen
+            UserDefaults.standard.set(name, forKey: "contactName")}
         if target != "" {
-            destinationLabel.isHidden = false
-            destinationLabel.text = target
-        } else {
-            destinationLabel.isHidden = true
-        }
-      
+            UserDefaults.standard.set(target, forKey: "destination")}
+        if phone != "" {
+            UserDefaults.standard.set(target, forKey: "contactPhone")}
+        
+        contactLabel.text = UserDefaults.standard.string(forKey: "contactName")
+        destinationLabel.text = UserDefaults.standard.string(forKey: "destination")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,13 +50,9 @@ class JourneyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         // Pass the selected countdown time to next controller
         if segue.identifier == "startJourney" {
             let nextController = segue.destination as! InJourneyViewController
@@ -77,11 +67,9 @@ class JourneyViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func getLocation(_ sender: UIButton){
-        
     }
     
     @IBAction func chooseContact(_ sender: UIButton) {
-
     }
 
 }

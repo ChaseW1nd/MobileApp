@@ -291,7 +291,7 @@
                                 </date>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ipM-RF-uS6">
-                                <rect key="frame" x="56" y="266" width="263.5" height="240"/>
+                                <rect key="frame" x="56" y="286" width="263.5" height="240"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhV-0W-iHG">
                                         <rect key="frame" x="0.0" y="0.0" width="263.5" height="41"/>
@@ -342,7 +342,7 @@
                         <constraints>
                             <constraint firstItem="ipM-RF-uS6" firstAttribute="centerX" secondItem="aow-TS-w2h" secondAttribute="centerX" id="7p4-qs-NuS"/>
                             <constraint firstItem="ipM-RF-uS6" firstAttribute="leading" secondItem="aow-TS-w2h" secondAttribute="leadingMargin" constant="40" id="FSY-IG-Amo"/>
-                            <constraint firstItem="ipM-RF-uS6" firstAttribute="top" secondItem="JGE-R1-2Me" secondAttribute="bottom" constant="20" id="Jo9-IS-qd0"/>
+                            <constraint firstItem="ipM-RF-uS6" firstAttribute="top" secondItem="JGE-R1-2Me" secondAttribute="bottom" constant="40" id="Jo9-IS-qd0"/>
                             <constraint firstItem="JGE-R1-2Me" firstAttribute="top" secondItem="VsL-aZ-dza" secondAttribute="bottom" constant="10" id="qFm-DG-KWc"/>
                             <constraint firstItem="JGE-R1-2Me" firstAttribute="centerX" secondItem="aow-TS-w2h" secondAttribute="centerX" id="tqX-fM-0aE"/>
                         </constraints>
