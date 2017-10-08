@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import EZAudio
 
-class InJourneyViewController: UIViewController {
+class InJourneyViewController: UIViewController, EZMicrophoneDelegate {
 
     // MARK: Properties
     @IBOutlet weak var minLabel: UILabel!
@@ -19,6 +20,9 @@ class InJourneyViewController: UIViewController {
     var totalSecs: Int!
     var timer: Timer!
     var contactPhone = ""
+    
+    var microphone: EZMicrophone!;
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,9 @@ class InJourneyViewController: UIViewController {
         
         // FIXME: Print for testing
         print(contactPhone)
+        
+        // Initialize the microphone
+        microphone = EZMicrophone(delegate: self, startsImmediately: false);
         
     }
 
@@ -77,6 +84,21 @@ class InJourneyViewController: UIViewController {
         
     }
     
+    // Start recording.
+    @IBAction func autoRecordButton(_ sender: UIButton) {
+        
+        microphone.startFetchingAudio()
+        print("Start")
+        
+    }
+    
+    func microphone(_ microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
+        DispatchQueue.main.async(execute: { () -> Void in
+            //self.plot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
+            print("0=========== \(buffer[0])")
+            print("1=========== \(buffer[1])")
+        });
+    }
     
     // Calculate the remaining time.
     func tickDown() {

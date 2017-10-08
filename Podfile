@@ -10,6 +10,7 @@ target 'MobileApp' do
   # Pods for MobileApp
   pod 'Alamofire', '~> 4.5'
   pod 'GoogleMaps'
-  pod 'GooglePlaces’
+  pod 'GooglePlaces'
+  pod 'EZAudio', '~> 1.1.4'
 
 end
