@@ -7,29 +7,80 @@
 //
 
 import UIKit
+import Alamofire
+import GoogleMaps
+import GooglePlaces
+import SwiftyJSON
 
-class ReceiverViewController: UIViewController {
-
-    override func viewDidLoad() {
+class ReceiverViewController: UIViewController, GMSMapViewDelegate ,  CLLocationManagerDelegate {
+    
+    
+    
+    @IBOutlet weak var googlemaps: UIView!
+    
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        for _ in 1...10000{
+        
+        LoadMap(lat: -33.86, lon: 151.20, zoom: 15.0)
+//        drawpoint()
+            
+            
+        }
     }
     
+    
+    func drawpoint()
+    {
+        
+        let url = "http://10.13.2.137:8181/location"
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        let parameters: [String: Any] = [
+            "positionX": "xx",
+            "positionY": "yy",
+            "sessionId": "1234",
+            "method" : "send",
+            ]
+        
+        
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+                print("Progress: \(progress.fractionCompleted)")
+            }
+            .validate { request, response, data in
+                // Custom evaluation closure now includes data (allows you to parse data to dig out error messages if necessary)
+                return .success
+            }
+            .responseJSON { response in
+                debugPrint(response)
+        }
+        
+        
+        
     }
-    */
+    
+    
+    func LoadMap(lat: Double, lon:Double,zoom: Float){
+        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lon, zoom: zoom)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        view = mapView
+        
+        
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        
+        mapView.settings.rotateGestures = true
+        mapView.settings.setAllGesturesEnabled(true)
+        mapView.settings.zoomGestures = true
+        mapView.settings.tiltGestures = true
+        
+        marker.map = mapView
+        
+    }
 
 }

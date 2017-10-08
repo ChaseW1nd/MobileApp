@@ -11,6 +11,7 @@ target 'MobileApp' do
   pod 'Alamofire', '~> 4.5'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'SwiftyJSON'
   pod 'EZAudio', '~> 1.1.4'
   pod 'TPCircularBuffer', '~> 1.1'
 
