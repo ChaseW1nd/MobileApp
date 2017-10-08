@@ -12,7 +12,6 @@ import Alamofire
 class RegisterViewController: UIViewController {
 
     // TODO: URL for server
-    
     let URL_USER_REGISTER = "http://10.13.2.137:8181/register"
     
     // MARK: Properties
@@ -68,22 +67,27 @@ class RegisterViewController: UIViewController {
             
             // Sending http post request.
             Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-                print("Request: \(String(describing: response.request))")   // original url request
-                print("Response: \(String(describing: response.response))") // http url response
-                print("Result: \(response.result)")                         // response serialization result
+                switch response.result{
+                case .success:
+                    print("Request: \(String(describing: response.request))")   // original url request
+                    print("Response: \(String(describing: response.response))") // http url response
+                    print("Result: \(response.result)")                         // response serialization result
                 
-                if let json = response.result.value {
+                    if let json = response.result.value {
                     print("JSON: \(json)") // serialized json response
-                }
-                
-                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                    }
                     
+                    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                        print("Data: \(utf8Text)") // original server data as UTF8 string
+                    }
+                
+                    let jsonData = response.result.value as! NSDictionary
+                    let test = jsonData.value(forKey: "state") as! String?
+                    self.nameField.text = test
+                
+                case .failure(let error):
+                    print(error)
                 }
-                
-                let jsonData = response.result.value as! NSDictionary
-                print(jsonData.value(forKey: "test") as! NSDecimalNumber?)
-                
             }
             
             

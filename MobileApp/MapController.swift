@@ -63,11 +63,11 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
         self.googleMapsView.settings.compassButton = true
         self.googleMapsView.isMyLocationEnabled = true
         
-        if let current = googleMapsView.myLocation {
-            print("User's location: \(current)")
-        } else {
-            print("User's location is unknown")
-        }
+//        if let current = self.googleMapsView.myLocation {
+//            print("User's location: \(current)")
+//        } else {
+//            print("User's location is unknown")
+//        }
         
         self.view.addSubview(self.googleMapsView)
         
@@ -102,7 +102,6 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
             marker.map = self.googleMapsView
             
             self.target = title
-            
         }
         
     }

@@ -285,7 +285,7 @@
 				TargetAttributes = {
 					9BC301B61F85112500E744FB = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = F5NBU4297C;
+						DevelopmentTeam = R39MGSM2C2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -527,8 +527,9 @@
 			baseConfigurationReference = 73B82A606E08C6B661BCBDAF /* Pods-MobileApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F5NBU4297C;
+				DEVELOPMENT_TEAM = R39MGSM2C2;
 				INFOPLIST_FILE = MobileApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unimelb.comp90018.MobileApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,8 +542,9 @@
 			baseConfigurationReference = 3AEE0B6A926F5AE9E11B8257 /* Pods-MobileApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F5NBU4297C;
+				DEVELOPMENT_TEAM = R39MGSM2C2;
 				INFOPLIST_FILE = MobileApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unimelb.comp90018.MobileApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

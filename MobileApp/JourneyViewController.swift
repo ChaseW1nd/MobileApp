@@ -12,19 +12,15 @@ class JourneyViewController: UIViewController {
 
     // MARK: Properties
     
-    @IBOutlet weak var currentLocationField: UITextField!
-    @IBOutlet weak var toLabel: UILabel!
-    @IBOutlet weak var destinationField: UITextField!
     @IBOutlet weak var contactLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var destinationLabel: UILabel!
     
     // Contact information.
     var name = ""
     var phone = ""
-    var current = ""
     var target = ""
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +31,6 @@ class JourneyViewController: UIViewController {
         let mainController = self.tabBarController as! MainViewController
         name = mainController.name
         phone = mainController.phone
-        current = mainController.currentLocation
         target = mainController.targetLocation
         
         // Hide contact label when no contact is choosen
@@ -47,14 +42,11 @@ class JourneyViewController: UIViewController {
         }
         
         // Hide location labels when no location is choosen
-        if current != "" {
-            currentLocationField.isHidden = false
-            destinationField.isHidden = false
-            destinationField.text = target
-            currentLocationField.text = current
+        if target != "" {
+            destinationLabel.isHidden = false
+            destinationLabel.text = target
         } else {
-            destinationField.isHidden = true
-            currentLocationField.isHidden = true
+            destinationLabel.isHidden = true
         }
       
     }
@@ -86,14 +78,9 @@ class JourneyViewController: UIViewController {
     
     @IBAction func getLocation(_ sender: UIButton){
         
-//        currentLocationField.isHidden = false
-//        toLabel.isHidden = false
-//        destinationField.isHidden = false
-        
     }
     
     @IBAction func chooseContact(_ sender: UIButton) {
-        //contactLabel.isHidden = false
 
     }
 
