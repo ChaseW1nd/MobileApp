@@ -2,7 +2,7 @@
 
 This is the mobile app for assignment 2 of COMP90018 Mobile Computing Systems Programming. 
     
-Travelling alone happens a lot. Especially for students, women or senior. sometimes we may have no choice but to go back home alone after a long overtime work. We may choose to take a taxi, catch a bus or take a walk, but either way we appreciate some extra protections. If we sense any unsecurity, how can we understand the current situation accurately? What should we do to make a response? **Safe2Home** lets you confirm your current location and calculate remaining journey time, provides a better direction to your dear family or friends and records any suspicious sound nearby. 
+Travelling alone happens a lot. Especially for students, women or senior. sometimes we may have no choice but to go back home alone after a long overtime work. We may choose to take a taxi, catch a bus or take a walk, but either way we appreciate some extra protections. If we sense any unsecurity, how can we understand the current situation accurately? What should we do to as a response? **Safe2Home** lets you confirm your current location and understand the remaining journey time, provides direct access to your dear family or friends and records any suspicious sound nearby. 
 
 ## Getting Started
 
