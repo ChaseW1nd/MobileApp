@@ -23,7 +23,9 @@ The testing username is "q" with password "q". Please double click the login but
     
     
 *Tab "Journey" let you set and start journey.     
+
 *Tab "Receiver" let you see your friend's current location when he/she needs your caring.  
+
 *Tab "Me" let you check your own information.
 
 ## Built With
