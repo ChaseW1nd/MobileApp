@@ -10,10 +10,17 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    // MARK: Properites
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        usernameLabel.text = UserDefaults.standard.string(forKey: "username")
+        nameLabel.text = UserDefaults.standard.string(forKey: "userName")
+        phoneLabel.text = UserDefaults.standard.string(forKey: "userPhone")
     }
 
     override func didReceiveMemoryWarning() {

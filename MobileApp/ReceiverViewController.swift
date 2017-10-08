@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 import GoogleMaps
 import GooglePlaces
-import SwiftyJSON
 
 class ReceiverViewController: UIViewController, GMSMapViewDelegate ,  CLLocationManagerDelegate {
     

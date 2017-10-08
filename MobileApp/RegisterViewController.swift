@@ -33,23 +33,25 @@ class RegisterViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//        if segue.identifier == "signUpSucceed" {
+//            // Nav to profile view
+//            let nextController = segue.destination as! MainViewController
+//            nextController.selectedIndex = 2
+//            // Save user info to UserDefautls
+//            UserDefaults.standard.set(usernameField.text, forKey: "username")
+//            UserDefaults.standard.set(nameField.text, forKey: "userName")
+//            UserDefaults.standard.set(phoneField.text, forKey: "userPhone")
+//        }
     }
-    */
+    
 
     // MARK: Actions
     @IBAction func signUpButton(_ sender: UIButton) {
-        
-//        let username = usernameField.text
-//        let password = passwordField.text
-//        let name = nameField.text
-//        let phone = phoneField.text
         
         if isValidPhone(value: phoneField.text!) {
             // Phone number is valid.
@@ -79,45 +81,14 @@ class RegisterViewController: UIViewController {
                         print("Data: \(utf8Text)") // original server data as UTF8 string
                     }
                 
-                    let jsonData = response.result.value as! NSDictionary
-                    let test = jsonData.value(forKey: "state") as! String?
-                    self.nameField.text = test
+                    //let jsonData = response.result.value as! NSDictionary
+                    //let test = jsonData.value(forKey: "state") as! String?
+                    //self.nameField.text = test
                 
                 case .failure(let error):
                     print(error)
                 }
             }
-            
-            
-//            Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters
-//                //, encoding: JSONEncoding.default
-//                )
-//                // FIXME: statusCode should align with the server implementation.
-//                //.validate(statusCode: 200..<300)
-//                .responseString {
-//                    response in
-//                    switch response.result {
-//                    
-//                    // TODO: Test connecting.
-//                    case .success:
-//                        // Print response.
-//                        debugPrint(response)
-//                    
-//                        // Convert it as NSDictionary.
-//                        //let jsonData = response.result.value as! NSDictionary
-//                        
-//                        //print(response.result.value(forKey: "test"))
-//                        
-//                        // Way to access: jsonData.value(forKey: "message") as! String?
-//                        // jsonData.value(forKey: "sessionID") as! String?
-//                        
-//                    case .failure(let error):
-//                        debugPrint(error)
-//                }
-//                    
-//            }
-            
-            
         
         }else{
             

@@ -10,7 +10,6 @@ import UIKit
 import EZAudio
 import GoogleMaps
 import GooglePlaces
-import SwiftyJSON
 import Alamofire
 
 class InJourneyViewController: UIViewController, EZMicrophoneDelegate,GMSMapViewDelegate ,  CLLocationManagerDelegate

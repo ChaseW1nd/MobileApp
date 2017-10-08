@@ -9,7 +9,6 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
-import SwiftyJSON
 import Alamofire
 
 class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSAutocompleteFetcherDelegate,GMSMapViewDelegate ,  CLLocationManagerDelegate
