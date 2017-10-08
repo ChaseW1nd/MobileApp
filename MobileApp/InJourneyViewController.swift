@@ -15,6 +15,7 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate {
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var secLabel: UILabel!
     @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var audioButton: UIButton!
     
     var time: Int!
     var totalSecs: Int!
@@ -23,6 +24,17 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate {
     
     var microphone: EZMicrophone!;
     
+    var recordBool: Bool = false {
+        didSet {
+            if recordBool {
+                audioButton.setTitle("⏹  Stop Recording", for: .normal)
+                microphone.startFetchingAudio()
+            }else{
+                microphone.stopFetchingAudio()
+                audioButton.setTitle("🎤  Auto-record voice", for: .normal)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,14 +99,12 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate {
     // Start recording.
     @IBAction func autoRecordButton(_ sender: UIButton) {
         
-        microphone.startFetchingAudio()
-        print("Start")
-        
+        recordBool = !recordBool
+
     }
-    
+
     func microphone(_ microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
         DispatchQueue.main.async(execute: { () -> Void in
-            //self.plot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
             print("0=========== \(buffer[0])")
             print("1=========== \(buffer[1])")
         });

@@ -12,5 +12,6 @@ target 'MobileApp' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'EZAudio', '~> 1.1.4'
+  pod 'TPCircularBuffer', '~> 1.1'
 
 end

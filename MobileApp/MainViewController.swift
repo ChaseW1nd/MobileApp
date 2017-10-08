@@ -15,6 +15,10 @@ class MainViewController: UITabBarController {
     var username = ""
     var phone = ""
     
+    // Location information.
+    var currentLocation = ""
+    var targetLocation = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -292,7 +292,7 @@
                                 </date>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ipM-RF-uS6">
-                                <rect key="frame" x="56" y="266" width="263.5" height="226.5"/>
+                                <rect key="frame" x="56" y="266" width="263.5" height="186.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhV-0W-iHG">
                                         <rect key="frame" x="0.0" y="0.0" width="263.5" height="41"/>
@@ -300,6 +300,7 @@
                                         <state key="normal" title="Get Location"/>
                                         <connections>
                                             <action selector="getLocation:" destination="Dq9-ns-pMx" eventType="touchUpInside" id="odl-TE-Upe"/>
+                                            <segue destination="Cc1-Fd-3V5" kind="show" id="Tin-Xc-m7R"/>
                                         </connections>
                                     </button>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gA-yD-mnq">
@@ -314,21 +315,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srP-uu-xwv">
-                                        <rect key="frame" x="0.0" y="51" width="263.5" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <segue destination="Cc1-Fd-3V5" kind="show" id="TJe-Zv-AKX"/>
-                                        </connections>
-                                    </button>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kku-s1-nEu">
-                                        <rect key="frame" x="0.0" y="86" width="263.5" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="46" width="263.5" height="0.0"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86s-KK-vgE">
-                                        <rect key="frame" x="0.0" y="91" width="263.5" height="41"/>
+                                        <rect key="frame" x="0.0" y="51" width="263.5" height="41"/>
                                         <accessibility key="accessibilityConfiguration" identifier="TabJourney"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <state key="normal" title="Choose A Contact"/>
@@ -338,13 +332,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gga-Jf-Mg3">
-                                        <rect key="frame" x="0.0" y="142" width="263.5" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="102" width="263.5" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRG-X0-0vW">
-                                        <rect key="frame" x="0.0" y="185.5" width="263.5" height="41"/>
+                                        <rect key="frame" x="0.0" y="145.5" width="263.5" height="41"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <state key="normal" title="Start">
@@ -410,7 +404,11 @@
                                 <action selector="searchWithAddress:" destination="aN6-uk-Mvs" id="bu8-JA-lkf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="hyE-dK-OdC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hyE-dK-OdC">
+                            <connections>
+                                <segue destination="t9w-Rq-Ssz" kind="presentation" identifier="returnLocation" id="hWy-ty-phr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="googleMapsContainer" destination="DRI-Kq-CW4" id="pwf-p3-wkf"/>
@@ -418,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYt-c3-9b1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2513" y="188"/>
+            <point key="canvasLocation" x="2577" y="188"/>
         </scene>
         <!--In Journey View Controller-->
         <scene sceneID="bKJ-XL-z8k">
@@ -550,6 +548,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="audioButton" destination="PE5-Vh-mDC" id="8zi-XQ-pCT"/>
                         <outlet property="hourLabel" destination="wR7-sl-EyC" id="vXV-xZ-Bre"/>
                         <outlet property="minLabel" destination="Omz-HL-OT6" id="JEd-xk-O1O"/>
                         <outlet property="secLabel" destination="KTb-TZ-axR" id="Fk9-Wn-Ycb"/>
@@ -557,7 +556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YW7-FG-Lya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063" y="889"/>
+            <point key="canvasLocation" x="2118" y="1033"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="59u-32-aZv">
@@ -723,7 +722,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="60q-tQ-DE5"/>
-        <segue reference="FJ7-Ty-WTx"/>
+        <segue reference="hWy-ty-phr"/>
         <segue reference="t3d-ZX-HhU"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,6 +13,9 @@ import GooglePlaces
 class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSAutocompleteFetcherDelegate,GMSMapViewDelegate ,  CLLocationManagerDelegate
    
 {
+    // MARK: Properites
+    var current = ""
+    var target = ""
     
     public func didFailAutocompleteWithError(_ error: Error) {
         //        resultText?.text = error.localizedDescription
@@ -36,11 +39,8 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
         print(resultsArray)
     }
     
-    
-    
     @IBOutlet weak var googleMapsContainer: UIView!
-    
-    
+
     var googleMapsView: GMSMapView!
     var searchResultController: SearchResultsController!
     var resultsArray = [String]()
@@ -50,13 +50,10 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
         super.viewDidLoad()
         
     }
-    
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-
-        
+    
         self.googleMapsView = GMSMapView(frame: self.googleMapsContainer.frame)
         
         self.googleMapsView?.isMyLocationEnabled = true
@@ -66,14 +63,13 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
         self.googleMapsView.settings.compassButton = true
         self.googleMapsView.isMyLocationEnabled = true
         
-        if let mylocation = googleMapsView.myLocation {
-            print("User's location: \(mylocation)")
+        if let current = googleMapsView.myLocation {
+            print("User's location: \(current)")
         } else {
             print("User's location is unknown")
         }
         
         self.view.addSubview(self.googleMapsView)
-        
         
         searchResultController = SearchResultsController()
         searchResultController.delegate = self
@@ -93,9 +89,7 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
     
     
     func locateWithLongitude(_ lon: Double, andLatitude lat: Double, andTitle title: String) {
-        
-        
-        
+    
         DispatchQueue.main.async { () -> Void in
             
             let position = CLLocationCoordinate2DMake(lat, lon)
@@ -106,6 +100,8 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
             
             marker.title = "Address : \(title)"
             marker.map = self.googleMapsView
+            
+            self.target = title
             
         }
         
@@ -120,5 +116,17 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
         
     }
     
-    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "returnLocation" {
+            let nextController = segue.destination as! MainViewController
+            nextController.currentLocation = current
+            nextController.targetLocation = target
+            
+            nextController.selectedIndex = 0
+            
+        }
+        
+    }
 }
