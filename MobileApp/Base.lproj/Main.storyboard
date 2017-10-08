@@ -445,14 +445,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHe-dp-adE">
-                                <rect key="frame" x="16" y="617" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="forTesting"/>
-                                <connections>
-                                    <segue destination="t9w-Rq-Ssz" kind="presentation" identifier="test" id="FJ7-Ty-WTx"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="4el-9s-BNF">
                                 <rect key="frame" x="62.5" y="90" width="250.5" height="48"/>
                                 <subviews>
@@ -522,7 +514,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="paw-oM-93b">
-                                <rect key="frame" x="16" y="221.5" width="333" height="224"/>
+                                <rect key="frame" x="16" y="269" width="333" height="224"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ij-fO-ytZ">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="41"/>
@@ -561,7 +553,7 @@
                             <constraint firstItem="paw-oM-93b" firstAttribute="centerX" secondItem="GCg-rD-NKw" secondAttribute="centerX" constant="-5" id="BJ3-1U-UbQ"/>
                             <constraint firstItem="paw-oM-93b" firstAttribute="leading" secondItem="GCg-rD-NKw" secondAttribute="leadingMargin" id="d21-S7-Oei"/>
                             <constraint firstItem="4el-9s-BNF" firstAttribute="top" secondItem="Vfq-UZ-ho8" secondAttribute="bottom" constant="70" id="fQb-wi-2iJ"/>
-                            <constraint firstItem="paw-oM-93b" firstAttribute="centerY" secondItem="GCg-rD-NKw" secondAttribute="centerY" id="o0D-C2-RHv"/>
+                            <constraint firstItem="paw-oM-93b" firstAttribute="centerY" secondItem="GCg-rD-NKw" secondAttribute="centerY" constant="47.5" id="o0D-C2-RHv"/>
                             <constraint firstItem="4el-9s-BNF" firstAttribute="centerX" secondItem="GCg-rD-NKw" secondAttribute="centerX" id="wkQ-lH-kek"/>
                         </constraints>
                     </view>
@@ -773,9 +765,8 @@
         <image name="icons8-Satellite Signal-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tin-Xc-m7R"/>
         <segue reference="60q-tQ-DE5"/>
-        <segue reference="hWy-ty-phr"/>
+        <segue reference="gKJ-dP-2G2"/>
         <segue reference="t3d-ZX-HhU"/>
     </inferredMetricsTieBreakers>
 </document>
