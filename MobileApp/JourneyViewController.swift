@@ -43,6 +43,9 @@ class JourneyViewController: UIViewController {
         contactLabel.text = UserDefaults.standard.string(forKey: "contactName")
         destinationLabel.text = UserDefaults.standard.string(forKey: "destination")
         
+        // Disable start button if no info is choosen
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

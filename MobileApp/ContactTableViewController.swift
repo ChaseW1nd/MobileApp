@@ -89,7 +89,6 @@ class ContactTableViewController: UITableViewController {
      }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         // Pass contact to injourney view controller
         if segue.identifier == "selectContact" {
             //let nextController = segue.destination as! JourneyViewController
@@ -102,7 +101,6 @@ class ContactTableViewController: UITableViewController {
             nextController.selectedIndex = 0
         }
     }
- 
 
     // MARK: Private Methods    
     private func loadSampleContacts(){
