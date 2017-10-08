@@ -1,6 +1,6 @@
 # Safe2Home
 
-This is the mobile app part for assignment 2 of COMP90018 Mobile Computing Systems Programming. 
+This is the mobile app for assignment 2 of COMP90018 Mobile Computing Systems Programming. 
     
 Travelling alone happens a lot. Especially for single young people, sometimes we have no choice but to go back home alone after a long overtime work. We may choose to take a taxi, catch a bus or take a walk, but either way we appreciate some extra protection. If we sense any unsecurity, how can we understand the current situation accurately? What should we do as a response? **Safe2Home** lets you confirm your current location and remaining journey time, provides direct access to your dear family or friends and records any suspicious sound nearby. We only give you the best choices for your safe journey to home!  
 
