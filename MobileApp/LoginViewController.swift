@@ -5,6 +5,8 @@
 //  Created by ellen on 4/10/17.
 //  Copyright © 2017 ellen. All rights reserved.
 //
+//  The icon of this app is found from
+//  <a href="https://icons8.com/icon/53130/Crosswalk">Crosswalk icon credits</a>
 
 import UIKit
 import Alamofire

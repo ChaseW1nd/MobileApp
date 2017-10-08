@@ -8,8 +8,13 @@
 
 import UIKit
 import EZAudio
+import GoogleMaps
+import GooglePlaces
+import SwiftyJSON
+import Alamofire
 
-class InJourneyViewController: UIViewController, EZMicrophoneDelegate {
+class InJourneyViewController: UIViewController, EZMicrophoneDelegate,GMSMapViewDelegate ,  CLLocationManagerDelegate
+   {
 
     // MARK: Properties
     @IBOutlet weak var minLabel: UILabel!
@@ -22,7 +27,12 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate {
     var timer: Timer!
     var contactPhone = ""
     
+    
     var microphone: EZMicrophone!;
+    
+    var googleMapsView: GMSMapView!
+    let locationManager = CLLocationManager()
+    var x = 1
     
     var recordBool: Bool = false {
         didSet {
@@ -123,6 +133,8 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate {
                          valueMin: (totalSecs % 3600) / 60,
                          valueSec: totalSecs % 60 )
         
+        
+        sendData()
         // Check if timeout.
         if totalSecs == 0 {
             
@@ -133,6 +145,47 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate {
         
         
     }
+    
+    
+    // send data to server
+    func sendData(){
+        
+        self.locationManager.startUpdatingLocation()
+        self.locationManager.startUpdatingLocation()
+ 
+        let latitudeText:String = "-1"
+        let longitudeText:String = "-1"
+        
+        if x > 6{
+        let latitudeText:String = "\(self.locationManager.location!.coordinate.latitude)"
+        let longitudeText:String = "\(self.locationManager.location!.coordinate)"
+
+        }
+        x = x+1
+        
+        let url = "http://10.13.2.137:8181/location"
+        
+        let parameters: [String: Any] = [
+            "positionX": latitudeText,
+            "positionY": longitudeText,
+            "sessionId": "2",
+            ]
+        
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+                print("Progress: \(progress.fractionCompleted)")
+            }
+            .validate { request, response, data in
+                // Custom evaluation closure now includes data (allows you to parse data to dig out error messages if necessary)
+                return .success
+            }
+            .responseJSON { response in
+                debugPrint(response)
+        }
+        
+    }
+    
     
     // Update labels.
     func updateTimeLabels(valueHour: Int, valueMin: Int, valueSec: Int){
