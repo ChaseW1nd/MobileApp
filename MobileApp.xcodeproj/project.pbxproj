@@ -25,6 +25,8 @@
 		9BC301E81F8514E200E744FB /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC301E71F8514E200E744FB /* ContactTableViewCell.swift */; };
 		9BC301EA1F8514ED00E744FB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC301E91F8514ED00E744FB /* Contact.swift */; };
 		9BC301EC1F85235900E744FB /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC301EB1F85235900E744FB /* AddContactViewController.swift */; };
+		D83E2B591F89D5E9009434D6 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E2B581F89D5E9009434D6 /* MapController.swift */; };
+		D83E2B5B1F89D659009434D6 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E2B5A1F89D659009434D6 /* SearchResultsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		9BC301E71F8514E200E744FB /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		9BC301E91F8514ED00E744FB /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		9BC301EB1F85235900E744FB /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
+		D83E2B581F89D5E9009434D6 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		D83E2B5A1F89D659009434D6 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,7 @@
 		9BC301ED1F85256400E744FB /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				D83E2B5C1F89D65F009434D6 /* Controller */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -234,6 +239,15 @@
 				7C49228E65526874511DA847 /* Pods_MobileApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D83E2B5C1F89D65F009434D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D83E2B5A1F89D659009434D6 /* SearchResultsController.swift */,
+				D83E2B581F89D5E9009434D6 /* MapController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,9 +328,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MobileApp/Pods-MobileApp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,6 +388,7 @@
 				9B375B691F88C0F30056AC98 /* InJourneyViewController.swift in Sources */,
 				9BC301E21F85135900E744FB /* JourneyViewController.swift in Sources */,
 				9BC301DA1F85126200E744FB /* LoginViewController.swift in Sources */,
+				D83E2B5B1F89D659009434D6 /* SearchResultsController.swift in Sources */,
 				9BC301E41F8514AA00E744FB /* ReceiverViewController.swift in Sources */,
 				9BC301BD1F85112500E744FB /* ViewController.swift in Sources */,
 				9BC301E61F8514CB00E744FB /* ContactTableViewController.swift in Sources */,
@@ -379,6 +398,7 @@
 				9BC301BB1F85112500E744FB /* AppDelegate.swift in Sources */,
 				9BC301EC1F85235900E744FB /* AddContactViewController.swift in Sources */,
 				9BC301DE1F85128D00E744FB /* User.swift in Sources */,
+				D83E2B591F89D5E9009434D6 /* MapController.swift in Sources */,
 				9BC301DC1F85127600E744FB /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

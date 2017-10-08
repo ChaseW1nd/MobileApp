@@ -9,5 +9,7 @@ target 'MobileApp' do
 
   # Pods for MobileApp
   pod 'Alamofire', '~> 4.5'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces’
 
 end
