@@ -10,7 +10,9 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSAutocompleteFetcherDelegate {
+class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSAutocompleteFetcherDelegate,GMSMapViewDelegate ,  CLLocationManagerDelegate
+   
+{
     
     public func didFailAutocompleteWithError(_ error: Error) {
         //        resultText?.text = error.localizedDescription
@@ -49,11 +51,29 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
         
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
+
+        
         self.googleMapsView = GMSMapView(frame: self.googleMapsContainer.frame)
+        
+        self.googleMapsView?.isMyLocationEnabled = true
+        self.googleMapsView.settings.myLocationButton = true
+        self.googleMapsView.settings.compassButton = true
+        self.googleMapsView.settings.zoomGestures = true
+        self.googleMapsView.settings.compassButton = true
+        self.googleMapsView.isMyLocationEnabled = true
+        
+        if let mylocation = googleMapsView.myLocation {
+            print("User's location: \(mylocation)")
+        } else {
+            print("User's location is unknown")
+        }
+        
         self.view.addSubview(self.googleMapsView)
+        
         
         searchResultController = SearchResultsController()
         searchResultController.delegate = self
@@ -93,29 +113,6 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        //            let placeClient = GMSPlacesClient()
-        //
-        //
-        //            placeClient.autocompleteQuery(searchText, bounds: nil, filter: nil)  {(results, error: Error?) -> Void in
-        //            // NSError myerr = Error;
-        //            print("Error @%",Error.self)
-        //
-        //                self.resultsArray.removeAll()
-        //                if results == nil {
-        //                    return
-        //                }
-        //
-        //                for result in results! {
-        //                    if let result = result as? GMSAutocompletePrediction {
-        //                        self.resultsArray.append(result.attributedFullText.string)
-        //                    }
-        //                }
-        //
-        //                self.searchResultController.reloadDataWithArray(self.resultsArray)
-        //
-        //        }
-        
         
         self.resultsArray.removeAll()
         gmsFetcher?.sourceTextHasChanged(searchText)
