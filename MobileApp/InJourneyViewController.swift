@@ -26,7 +26,7 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate,GMSMapView
     var timer: Timer!
     var contactPhone = ""
     
-    
+    var arrive = false
     var microphone: EZMicrophone!;
     
     var googleMapsView: GMSMapView!
@@ -55,9 +55,6 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate,GMSMapView
         // Use Timer to update remaining time and labels
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickDown), userInfo: nil, repeats: true)
         
-        // FIXME: Print for testing
-        print(contactPhone)
-        
         // Initialize the microphone
         microphone = EZMicrophone(delegate: self, startsImmediately: false);
         
@@ -82,6 +79,7 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate,GMSMapView
             
         }else if segue.identifier == "arrive" {
             
+            self.arrive = true
             let nextController = segue.destination as! MainViewController
             nextController.selectedIndex = 0
             let destination = Bundle.main.bundleIdentifier!
@@ -132,16 +130,12 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate,GMSMapView
                          valueMin: (totalSecs % 3600) / 60,
                          valueSec: totalSecs % 60 )
         
-        
-        sendData()
-        // Check if timeout.
-        if totalSecs == 0 {
-            
-            // Send notification.
-            
-            
+        // Stop sending data when arrived or time out
+        if !arrive && totalSecs > 0{
+            sendData()
+        }else{
+            self.locationManager.stopUpdatingLocation()
         }
-        
         
     }
     
@@ -149,7 +143,6 @@ class InJourneyViewController: UIViewController, EZMicrophoneDelegate,GMSMapView
     // send data to server
     func sendData(){
         
-        self.locationManager.startUpdatingLocation()
         self.locationManager.startUpdatingLocation()
  
         let latitudeText:String = "-1"

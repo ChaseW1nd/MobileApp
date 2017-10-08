@@ -82,7 +82,6 @@ class LoginViewController: UIViewController {
                     let jsonData = response.result.value as! NSDictionary
                     let message = jsonData.value(forKey: "state") as! String?
                     
-                    
                     let alert = UIAlertController(title: "Result",
                                                   message: message,
                                                   preferredStyle: .alert)
@@ -91,6 +90,9 @@ class LoginViewController: UIViewController {
                     alert.addAction(action)
                     self.authentication = true
                     print(self.authentication)
+                    
+                    let session = jsonData.value(forKey: "sessionId") as! String?
+                    UserDefaults.standard.set(session, forKey: "sessionID")
                     
                 case .failure(let error):
                     print(error)

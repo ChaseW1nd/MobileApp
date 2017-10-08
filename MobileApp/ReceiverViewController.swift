@@ -22,15 +22,13 @@ class ReceiverViewController: UIViewController, GMSMapViewDelegate ,  CLLocation
     {
         super.viewDidLoad()
         
-        for _ in 1...10000{
-        
-        LoadMap(lat: -33.86, lon: 151.20, zoom: 15.0)
-//        drawpoint()
-            
-            
-        }
+        drawpoint()
+
+        LoadMap(lat: -37.7991, lon: 144.9631, zoom: 15.0)
+ 
     }
     
+    // MARK: Methods
     
     func drawpoint()
     {
@@ -45,8 +43,6 @@ class ReceiverViewController: UIViewController, GMSMapViewDelegate ,  CLLocation
             "method" : "send",
             ]
         
-        
-        
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
                 print("Progress: \(progress.fractionCompleted)")
@@ -59,10 +55,7 @@ class ReceiverViewController: UIViewController, GMSMapViewDelegate ,  CLLocation
                 debugPrint(response)
         }
         
-        
-        
     }
-    
     
     func LoadMap(lat: Double, lon:Double,zoom: Float){
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lon, zoom: zoom)
