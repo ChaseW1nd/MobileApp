@@ -67,3 +67,56 @@ fastlane/screenshots
 fastlane/test_output
 
 .DS_Store
+Pods/EZAudio/LICENSE
+Pods/EZAudio/README.md
+Pods/EZAudio/EZAudio/EZAudio.h
+Pods/EZAudio/EZAudio/EZAudio.m
+Pods/EZAudio/EZAudio/EZAudioDevice.h
+Pods/EZAudio/EZAudio/EZAudioDevice.m
+Pods/EZAudio/EZAudio/EZAudioDisplayLink.h
+Pods/EZAudio/EZAudio/EZAudioDisplayLink.m
+Pods/EZAudio/EZAudio/EZAudioFFT.h
+Pods/EZAudio/EZAudio/EZAudioFFT.m
+Pods/EZAudio/EZAudio/EZAudioFile.h
+Pods/EZAudio/EZAudio/EZAudioFile.m
+Pods/EZAudio/EZAudio/EZAudioFloatConverter.h
+Pods/EZAudio/EZAudio/EZAudioFloatConverter.m
+Pods/EZAudio/EZAudio/EZAudioFloatData.h
+Pods/EZAudio/EZAudio/EZAudioFloatData.m
+Pods/EZAudio/EZAudio/EZAudioiOS.h
+Pods/EZAudio/EZAudio/EZAudioOSX.h
+Pods/EZAudio/EZAudio/EZAudioPlayer.h
+Pods/EZAudio/EZAudio/EZAudioPlayer.m
+Pods/EZAudio/EZAudio/EZAudioPlot.h
+Pods/EZAudio/EZAudio/EZAudioPlot.m
+Pods/EZAudio/EZAudio/EZAudioPlotGL.h
+Pods/EZAudio/EZAudio/EZAudioPlotGL.m
+Pods/EZAudio/EZAudio/EZAudioUtilities.h
+Pods/EZAudio/EZAudio/EZAudioUtilities.m
+Pods/EZAudio/EZAudio/EZMicrophone.h
+Pods/EZAudio/EZAudio/EZMicrophone.m
+Pods/EZAudio/EZAudio/EZOutput.h
+Pods/EZAudio/EZAudio/EZOutput.m
+Pods/EZAudio/EZAudio/EZPlot.h
+Pods/EZAudio/EZAudio/EZPlot.m
+Pods/EZAudio/EZAudio/EZRecorder.h
+Pods/EZAudio/EZAudio/EZRecorder.m
+Pods/EZAudio/EZAudio/TPCircularBuffer.c
+Pods/EZAudio/EZAudio/TPCircularBuffer.h
+Pods/Target Support Files/EZAudio/EZAudio-dummy.m
+Pods/Target Support Files/EZAudio/EZAudio-prefix.pch
+Pods/Target Support Files/EZAudio/EZAudio-umbrella.h
+Pods/Target Support Files/EZAudio/EZAudio.modulemap
+Pods/Target Support Files/EZAudio/EZAudio.xcconfig
+Pods/Target Support Files/EZAudio/Info.plist
+Pods/Target Support Files/TPCircularBuffer/Info.plist
+Pods/Target Support Files/TPCircularBuffer/TPCircularBuffer-dummy.m
+Pods/Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch
+Pods/Target Support Files/TPCircularBuffer/TPCircularBuffer-umbrella.h
+Pods/Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap
+Pods/Target Support Files/TPCircularBuffer/TPCircularBuffer.xcconfig
+Pods/TPCircularBuffer/README.markdown
+Pods/TPCircularBuffer/TPCircularBuffer+AudioBufferList.c
+Pods/TPCircularBuffer/TPCircularBuffer+AudioBufferList.h
+Pods/TPCircularBuffer/TPCircularBuffer.c
+Pods/TPCircularBuffer/TPCircularBuffer.h

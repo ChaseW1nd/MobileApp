@@ -50,7 +50,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="t9w-Rq-Ssz" kind="show" id="TKs-g1-FyB"/>
+                                            <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sQj-C6-FPR"/>
+                                            <segue destination="t9w-Rq-Ssz" kind="presentation" identifier="authentication" id="TKs-g1-FyB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eP-s9-bde">
@@ -63,6 +64,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C2r-hb-AUe">
+                                <rect key="frame" x="26" y="455" width="323" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="0.1089624958703147" blue="0.04901644319960996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -72,6 +80,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="messageField" destination="C2r-hb-AUe" id="DFa-9j-LXb"/>
                         <outlet property="passwordField" destination="ioz-iO-bCw" id="mHB-Wz-gkW"/>
                         <outlet property="usernameField" destination="9ca-HM-l82" id="Z6p-YE-Ztm"/>
                     </connections>
