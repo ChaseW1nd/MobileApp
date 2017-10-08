@@ -1,48 +1,35 @@
-# MobileApp
+# Safe2Home
 
-Name needs to be changed.
 This is the mobile app part for assignment 2 of COMP90018 Mobile Computing Systems Programming.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Since we slightly changed the contents of pod "EZAudio", please use the given pods instead of doing "pod install" to avoid any potential errors. 
+     
+The testing username is "q" with password "q". Please double click the login button if the navigation is not working, we apologize for the inconvenience.
 
-```
-Give examples
-```
+### Features
 
-### Installing
+#### 
+####
 
-Since Pods/ folder is included, there's no need to do
-
-```
-pod install
-```
-
-You only need to
-
-```
-I'm not quite sure now
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
 * [Alamofire](https://github.com/Alamofire/Alamofire) - Used to handle networking
+* [GoogleMaps](https://github.com/googlemaps/) - Used to handle map and relevant information
+* [GooglePlaces](https://github.com/qpowell/google_places) - Used to handle map and relevant information
+* [EZAudio](https://github.com/syedhali/EZAudio) - Used to handle audio recording
+* [TPCircularBuffer](https://github.com/michaeltyson/TPCircularBuffer) - Used to handle audio recording
+
 
 ## Authors
 
 * **Ellen Gong**
 * **Lai Wei**
+* **Siming Gu**
 
 
 ## License
