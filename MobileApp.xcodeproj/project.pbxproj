@@ -177,11 +177,11 @@
 		9BC301D31F85121500E744FB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9BC301DF1F85131A00E744FB /* ProfileViewController.swift */,
 				9BC301E11F85135900E744FB /* JourneyViewController.swift */,
 				9BC301E31F8514AA00E744FB /* ReceiverViewController.swift */,
 				9B375B681F88C0F30056AC98 /* InJourneyViewController.swift */,
 				9B375B6B1F893DF90056AC98 /* MainViewController.swift */,
+				9BC301DF1F85131A00E744FB /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

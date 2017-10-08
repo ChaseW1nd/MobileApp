@@ -148,7 +148,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="UkY-f0-7Fw"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOut" id="UkY-f0-7Fw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -706,8 +706,8 @@
         <image name="icons8-Satellite Signal-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="60q-tQ-DE5"/>
+        <segue reference="K4A-nK-S43"/>
         <segue reference="TKs-g1-FyB"/>
-        <segue reference="t3d-ZX-HhU"/>
+        <segue reference="UkY-f0-7Fw"/>
     </inferredMetricsTieBreakers>
 </document>

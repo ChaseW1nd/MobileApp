@@ -85,6 +85,7 @@ class MapController : UIViewController,UISearchBarDelegate,  LocateOnTheMap,GMSA
         
         searchController.searchBar.delegate = self
         self.present(searchController, animated:true, completion: nil)
+        searchController.becomeFirstResponder()
     }
     
     

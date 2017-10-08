@@ -58,8 +58,6 @@ class JourneyViewController: UIViewController {
             let nextController = segue.destination as! InJourneyViewController
             // Pass the number of minutes
             nextController.time = Int(datePicker.countDownDuration) / 60
-            // Pass the contact number
-            nextController.contactPhone = phone
         }
         
     }
